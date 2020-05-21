@@ -1,0 +1,14 @@
+<body>
+    <h1>Confirm to delete</h1>
+    <p>sure</p>
+    <ul>
+        <li>Content: {{.todo.Text}}</li>
+        <li>Status: {{.todo.Status}}</li>
+        <li>Create time: {{.todo.CreatedAt}}</li>
+    </ul>
+
+    <form method="post" action="/todos/delete/{{.todo.ID}}">
+        <p><input type="submit" value="delete"></p>
+        <p><a href="/todos">back</a></p>
+    </form>
+</body>
