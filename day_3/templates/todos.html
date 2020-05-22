@@ -1,0 +1,23 @@
+<body>
+    <h2>Insert</h2>
+    <form method="post" action="/todos/new">
+        <p>Content<input type="text" name="text" size="30" placeholder="please input"></p>
+        <p>Status
+            <select name="status">
+                <option value="nostart">notstart</option>
+                <option value="ongoing">ongoing</option>
+                <option value="done">done</option>
+            </select>
+        </p>
+        <p><input type="submit" value="Send"></p>
+    </form>
+
+    <ul>
+        {{ range .todos }}
+        <li>Content: {{ .Text }}, Status: {{ .Status }}
+            <label><a href="/todos/detail/{{.ID}}">Edit</a></label>
+            <label><a href="/todos/delete_check/{{.ID}}">Delete</a></label>
+        </li>
+        {{end}}
+    </ul>
+</body>
